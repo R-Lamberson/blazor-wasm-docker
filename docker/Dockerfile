@@ -1,7 +1,9 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
 # -- this fails
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-nanoserver-1809 AS base 
+FROM mcr.microsoft.com/dotnet/aspnet:5.0.0-nanoserver-1809 AS base
+# -- this fails
+# FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-nanoserver-1809 AS base  
 # -- this works
 # FROM mcr.microsoft.com/dotnet/aspnet:3.1.10-buster-slim AS base
 
@@ -12,7 +14,9 @@ EXPOSE 80
 EXPOSE 443
 
 # -- this fails
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1809 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0.100-nanoserver-1809 AS build
+# -- this fails
+# FROM mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1809 AS build
 # -- this works
 # FROM mcr.microsoft.com/dotnet/sdk:3.1.404-buster AS build 
 WORKDIR /src
